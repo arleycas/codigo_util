@@ -12,3 +12,27 @@ const objOpciones = {
 respuesta = objOpciones['opcion1'];
 console.log(respuesta); //R: Res1
 ```
+
+### Crear y usar promesas
+```
+// crear promesa
+function miFuncion (n1, n2) {
+  return new Promise((resolve, reject) => {
+
+    const resultado = n1 + n2;
+
+    resolve(resultado);
+    reject(new Error('Ha ocurrido un error'));
+
+  });
+}
+
+// utilizar promesa
+miFuncion(22, 88)
+  .then(resolve => {
+    console.log(resolve); // 110
+  })
+  .catch(error => { //reject
+    console.log(error); // obj Error
+  })
+```
